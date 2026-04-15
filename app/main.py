@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from app.routers import predictions
 from pydantic import BaseModel
 import joblib 
 
@@ -14,7 +15,7 @@ class PredictionOutput(BaseModel):
     prediction: float # Or appropriate type
 
 # --- Application Setup ---
-app = FastAPI(title="Simple ML Prediction Service")
+app = FastAPI(title="Refactored ML Prediction Service", version="1.0.0")
 
 # --- Model Loading (from Chapter 3) ---
 # In a real app, handle potential loading errors
